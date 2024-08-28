@@ -21,14 +21,14 @@ while running:
             running = False
 
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_LEFT] and x > vel:
+    if keys[pygame.K_a] and x > vel:
         x -= vel
-    if keys[pygame.K_RIGHT] and x < 500 - width - vel:
+    if keys[pygame.K_d] and x < 500 - width - vel:
         x += vel
     if not(isJump): 
-        if keys[pygame.K_UP] and y > vel:
+        if keys[pygame.K_w] and y > vel:
             y -= vel
-        if keys[pygame.K_DOWN] and y < 500 - height - vel:  
+        if keys[pygame.K_s] and y < 500 - height - vel:  
             y += vel
         if keys[pygame.K_SPACE]:
             isJump = True
