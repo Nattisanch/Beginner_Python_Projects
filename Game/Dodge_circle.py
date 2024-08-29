@@ -79,17 +79,6 @@ def game_over_screen():
     display_text("Main Menu", font, BLACK, root, WIDTH // 2, HEIGHT // 2 + 150)
     pygame.display.update()
     
-
-    while True:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                mouse_x, mouse_y = event.pos
-                if WIDTH // 2 - 100 < mouse_x < WIDTH // 2 + 100 and HEIGHT // 2 + 100 < mouse_y < HEIGHT // 2 + 200:
-                        main_menu_screen()
-
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -99,6 +88,9 @@ def game_over_screen():
                 mouse_x, mouse_y = event.pos
                 if WIDTH // 2 - 100 < mouse_x < WIDTH // 2 + 100 and HEIGHT // 2 + 25 < mouse_y < HEIGHT // 2 + 75:
                     main_game()
+                elif WIDTH // 2 - 100 < mouse_x < WIDTH // 2 + 100 and HEIGHT // 2 + 100 < mouse_y < HEIGHT // 2 + 200:
+                    main_menu_screen()
+
 
 
 def main_game():
