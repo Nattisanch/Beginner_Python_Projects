@@ -23,7 +23,7 @@ FPS = 60
 
 player_radius = 40
 player_position = pygame.Vector2(WIDTH / 2, HEIGHT / 2)
-player_speed = 300
+player_speed = 500
 
 
 jump = False
@@ -141,6 +141,15 @@ def main_game():
                 else:
                     jump = False
                     jump_ct = 10
+              
+        if player_position.x - player_radius < 0:
+            player_position.x = player_radius
+        if player_position.x + player_radius > WIDTH:
+            player_position.x = WIDTH - player_radius
+        if player_position.y - player_radius < 0:
+            player_position.y = player_radius
+        if player_position.y + player_radius > HEIGHT:
+            player_position.y = HEIGHT - player_radius
 
         
         for enemy in enemies:
